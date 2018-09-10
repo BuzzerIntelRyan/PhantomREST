@@ -1,0 +1,24 @@
+{
+  "name": "phantomrest",
+  "version": "1.0.0",
+  "description": "REST API for PhantomPass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wohlbier/PhantomREST.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wohlbier/PhantomREST/issues"
+  },
+  "homepage": "https://github.com/wohlbier/PhantomREST#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mssql": "^4.1.0"
+  }
+}
