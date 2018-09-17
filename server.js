@@ -14,7 +14,7 @@ app.use(function (req, res, next) {
   //Enabling CORS
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, contentType,Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Headers", "Accept, Authorization, Content-Type, Origin, X-Requested-With,  ");
   next();
 });
 
@@ -26,7 +26,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
 
 //Initiallising connection string
 var dbConfig = {
-    user:  "myuser",
+    user:  "xxx",
     password: "xxx",
     server: "djibouti.database.windows.net",
     database: "PhantomPass",
@@ -112,4 +112,12 @@ app.put("/Users/:id", function(req, res) {
 app.delete("/Users/:id", function(req , res) {
   var query = "DELETE FROM [Users] WHERE Id=" + req.params.id;
   executeQuery (res, query);
+});
+
+// authenticate
+app.post("/login", function(req, res) {
+  console.log('server: got a /login request with username:'
+	      + req.body.username + ' and password:' + req.body.password);
+  res.send('Got a /login request with username'
+	   + req.body.username + ' and password:' + req.body.password);
 });
